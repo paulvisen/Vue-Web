@@ -9,7 +9,8 @@
 
         <section id="page">
             <!-- 首页列表 -->
-            <ul class="posts-list">
+            <!--首页信息的显示形式-->
+           <!-- <ul class="posts-list">
                 <li v-for="item in topics">
                     <router-link :to="{name:'topic',params:{id:item.id}}">
                     <h3 v-text="item.title"
@@ -36,7 +37,35 @@
                     </div>
                     </router-link>
                 </li>
-            </ul>
+            </ul>-->
+             <ul class="posts-list">
+             <li v-for="item in topics">
+                 <router-link :to="{name:'topic',params:{id:item.id}}">
+                 <h3 v-text="getTestInfo()"
+                         :class="getTabInfo(item.tab, item.good, item.top, true)"
+                         :title="getTabInfo(item.tab, item.good, item.top, false)">
+                 </h3>
+                 <div class="content">
+                     <img class="avatar" :src="item.author.avatar_url" />
+                     <div class="info">
+                         <p>
+                             <span class="name">
+                                 {{item.author.loginname}}  发布
+                             </span>
+ <!--                            <span class="status" v-if="item.reply_count > 0">
+                                 <b>{{item.reply_count}}</b>
+                                 /{{item.visit_count}}
+                             </span>-->
+                         </p>
+<!--                         <p>
+                             <time>{{item.create_at | getLastTimeStr(true)}}</time>
+                             <time>{{item.last_reply_at | getLastTimeStr(true)}}</time>
+                         </p>-->
+                     </div>
+                 </div>
+                 </router-link>
+             </li>
+         </ul>
         </section>
         <nv-top></nv-top>
     </div>
@@ -117,16 +146,16 @@
                 let str = '';
                 switch (tab) {
                     case 'share':
-                        str = '分享';
+                        str = '交易信息';
                         break;
                     case 'ask':
-                        str = '问答';
+                        str = '科技成果';
                         break;
                     case 'job':
-                        str = '招聘';
+                        str = '需求信息';
                         break;
                     case 'good':
-                        str = '精华';
+                        str = '团队信息';
                         break;
                     default:
                         str = '全部';
@@ -158,7 +187,12 @@
                         this.getTopics();
                     }
                 }
+            },
+            getTestInfo(){
+                return "测试数据  "+Math.random();
+
             }
+
         },
         watch: {
             // 切换页面

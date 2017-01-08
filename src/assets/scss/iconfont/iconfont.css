@@ -16,7 +16,7 @@
   -webkit-text-stroke-width: 0.2px;
   -moz-osx-font-smoothing: grayscale;
 }
-.icon-tianjia:before { content: "\e60d"; margin-right: 30px; }
+/*.icon-tianjia:before { content: "\e60d"; margin-right: 30px; }
 .icon-fenxiang:before { content: "\e600"; margin-right: 30px; }
 .icon-shezhi:before { content: "\e601"; margin-right: 30px;}
 .icon-wenda:before { content: "\e602"; margin-right: 30px;}
@@ -24,4 +24,15 @@
 .icon-quanbu:before { content: "\e604"; margin-right: 30px;}
 .icon-zhaopin:before { content: "\e605"; margin-right: 30px;}
 .icon-xiaoxi:before { content: "\e606"; margin-right: 30px;}
+.icon-about:before { content: "\e607"; margin-right: 30px;}*/
+
+.icon-tianjia:before { content: "\e60d"; margin-right: 30px; }
+.icon-jiaoyi:before { content: "\e600"; margin-right: 30px; }/*交易信息*/
+.icon-shezhi:before { content: "\e601"; margin-right: 30px;}
+.icon-keji:before { content: "\e602"; margin-right: 30px;}/*科技成果*/
+.icon-tuandui:before { content: "\e603"; margin-right: 30px;}/*团队信息*/
+.icon-zhuye:before { content: "\e604"; margin-right: 30px;}/*主页信息*/
+.icon-xuqiu:before { content: "\e605"; margin-right: 30px;}/*需求*/
+.icon-xiaoxi:before { content: "\e606"; margin-right: 30px;}
 .icon-about:before { content: "\e607"; margin-right: 30px;}
+

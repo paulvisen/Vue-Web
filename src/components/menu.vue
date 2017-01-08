@@ -1,14 +1,21 @@
 <template>
     <section id="sideBar" class="nav-list" :class="{'show':showMenu}">
         <user-info></user-info>
+        <user-signup></user-signup>
         <section class="list-ul">
-            <router-link class="icon-quanbu iconfont item" :to="{'name':'list',query:{tab:'all'}}">全部</router-link>
+<!--            <router-link class="icon-quanbu iconfont item" :to="{'name':'list',query:{tab:'all'}}">全部</router-link>
             <router-link class="icon-hao iconfont item" :to="{'name':'list',query:{tab:'good'}}">精华</router-link>
             <router-link class="icon-fenxiang iconfont item" :to="{'name':'list',query:{tab:'share'}}">分享</router-link>
             <router-link class="icon-wenda iconfont item" :to="{'name':'list',query:{tab:'ask'}}">问答</router-link>
             <router-link class="icon-zhaopin iconfont item" :to="{'name':'list',query:{tab:'job'}}">招聘</router-link>
             <router-link class="icon-xiaoxi iconfont item line" :to="{'name':'message'}">消息</router-link>
-            <router-link class="icon-about iconfont item" :to="{'name':'about'}">关于</router-link>
+            <router-link class="icon-about iconfont item" :to="{'name':'about'}">关于</router-link>-->
+            <router-link class="icon-zhuye iconfont item" :to="{'name':'list',query:{tab:'all'}}">新闻信息</router-link>
+            <router-link class="icon-tuandui iconfont item" :to="{'name':'list',query:{tab:'good'}}">团队信息</router-link>
+            <router-link class="icon-jiaoyi iconfont item" :to="{'name':'list',query:{tab:'share'}}">交易信息</router-link>
+            <router-link class="icon-keji iconfont item" :to="{'name':'list',query:{tab:'ask'}}">科技成果</router-link>
+            <router-link class="icon-xuqiu iconfont item" :to="{'name':'list',query:{tab:'job'}}">需求信息</router-link>
+            <router-link class="icon-about iconfont item" :to="{'name':'about'}">关于应用</router-link>
         </section>
     </section>
 </template>
@@ -17,14 +24,15 @@
         replace: true,
         props: ['showMenu', 'pageType', 'nickName', 'profileUrl'],
         components: {
-            'userInfo': require('./user-info.vue')
+            'userInfo': require('./user-info.vue'),
+            'userSignup':require('./user-signup.vue')
         }
     };
 </script>
 
 <style lang="scss">
     /*侧边栏*/
-    
+
     .nav-list {
         position: fixed;
         top: 0;
@@ -40,7 +48,7 @@
         }
     }
     /*侧边栏列表*/
-    
+
     .list-ul {
         margin: 0 24px;
         border-top: 1px solid #d4d4d4;

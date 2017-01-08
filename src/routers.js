@@ -73,6 +73,14 @@ const routers = [{
             resolve(require('./views/login.vue'));
         });
     }
+},{
+    path: '/signup',
+    name: 'signup',
+    component(resolve) {
+        require.ensure(['./views/signup.vue'], () => {
+            resolve(require('./views/signup.vue'));
+        });
+    }
 }, {
     path: '*',
     component: Home

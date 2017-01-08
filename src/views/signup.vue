@@ -1,20 +1,22 @@
 <template>
     <div class="login-page">
 
-        <nv-head page-type="登录"
-            :fix-head=true>
+        <nv-head page-type="注册"
+                 :fix-head=true>
         </nv-head>
         <section class="page-body">
             <div class="label">
-                <input class="txt" type="text" placeholder="用户名" v-model="username" maxlength="36">
+                <input class="txt" type="text" placeholder="设定用户名" v-model="email" maxlength="36">
             </div>
             <div class="label">
-                <input class="txt" type="password" placeholder="密码" v-model="password" maxlength="36">
+                <input class="txt" type="password" placeholder="设定密码" v-model="password1" maxlength="36">
             </div>
             <div class="label">
-                <a class="button" @click="login">登录</a>
+                <input class="txt" type="password" placeholder="请再次输入密码" v-model="password2" maxlength="36">
             </div>
-
+            <div class="label">
+                <a class="button" @click="signup">注册</a>
+            </div>
         </section>
     </div>
 </template>
@@ -27,16 +29,17 @@
     export default {
         data() {
             return {
-                username: ''
+                username: '',
+                password1:'',
+                password2:''
             };
         },
         methods: {
             login() {
-                if (this.username === '' || this.password === '') {
+                if (this.username === '' || this.password1 === ''|| this.password2==='') {
                     this.$alert('请填写用户名和密码');
                     return false;
                 }
-
                 $.ajax({
                     type: 'POST',
                     url: 'https://cnodejs.org/api/v1/accesstoken',

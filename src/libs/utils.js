@@ -139,28 +139,28 @@ exports.getLastTimeStr = (time, friendly) => {
 exports.getTabInfo = (tab, good, top, isClass) => {
     let str = '';
     let className = '';
-    if (top) {
+/*    if (top) {
         str = '置顶';
         className = 'top';
-    } else if (good) {
-        str = '精华';
+    } else*/ if (good) {
+        str = '团队信息';
         className = 'good';
     } else {
         switch (tab) {
             case 'share':
-                str = '分享';
+                str = '交易信息';
                 className = 'share';
                 break;
             case 'ask':
-                str = '问答';
+                str = '科技成果';
                 className = 'ask';
                 break;
             case 'job':
-                str = '招聘';
+                str = '需求信息';
                 className = 'job';
                 break;
             default:
-                str = '暂无';
+                str = '团队信息';
                 className = 'default';
                 break;
         }

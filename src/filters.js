@@ -25,14 +25,14 @@ exports.getTabStr = (tab, good, top) => {
         str = '精华';
     } else {
         switch (tab) {
-            case 'share':
-                str = '分享';
+            case '交易':
+                str = '交易信息';
                 break;
-            case 'ask':
-                str = '问答';
+            case 'keji':
+                str = '科技成果';
                 break;
-            case 'job':
-                str = '招聘';
+            case 'xuqiu':
+                str = '需求信息';
                 break;
             default:
                 str = '暂无';
@@ -56,14 +56,14 @@ exports.getTabClassName = (tab, good, top) => {
         className = 'good';
     } else {
         switch (tab) {
-            case 'share':
-                className = 'share';
+            case 'jiaoyi':
+                className = 'jiaoyi';
                 break;
-            case 'ask':
-                className = 'ask';
+            case 'keji':
+                className = 'keji';
                 break;
-            case 'job':
-                className = 'job';
+            case 'xuqiu':
+                className = 'xuqiu';
                 break;
             default:
                 className = 'default';

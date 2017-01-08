@@ -5,13 +5,14 @@
             <img class="u-img" :src="user.avatar_url" /><br/>
             <span class="u-name" v-text="user.loginname"></span>
             <div class="u-bottom">
+                用户创建时间：
                 <span class="u-time" v-text="getLastTimeStr(user.create_at, false)"></span>
-                <span class="u-score">积分：{{user.score}}</span>
+                <!--<span class="u-score">积分：{{user.score}}</span>-->
             </div>
         </section>
         <section class="topics">
-            <ul class="user-tabs">
-                <li class="item br" :class='{"selected":selectItem === 1}' @click="changeItem(1)">最近回复</li>
+<!--            <ul class="user-tabs">
+                <li class="item br" :class='{"selected":selectItem === 1}' @click="changeItem(1)"></li>
                 <li class="item" :class='{"selected":selectItem === 2}' @click="changeItem(2)">最新发布</li>
             </ul>
             <div class="message" v-for="item in currentData">
@@ -29,7 +30,7 @@
                         </span>
                     </router-link>
                 </section>
-            </div>
+            </div>-->
             <div class="no-data" v-show="currentData.length === 0">
                 <i class="iconfont icon-empty">&#xe60a;</i>
                 暂无数据!
