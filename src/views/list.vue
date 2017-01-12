@@ -41,7 +41,7 @@
              <ul class="posts-list">
              <li v-for="item in topics">
                  <router-link :to="{name:'topic',params:{id:item.id}}">
-                 <h3 v-text="getTestInfo()"
+                 <h3 v-text="getTestInfo(item.tab)"
                          :class="getTabInfo(item.tab, item.good, item.top, true)"
                          :title="getTabInfo(item.tab, item.good, item.top, false)">
                  </h3>
@@ -188,8 +188,27 @@
                     }
                 }
             },
-            getTestInfo(){
-                return "测试数据  "+Math.random();
+            getTestInfo(tab){
+             let str = '';
+                switch (tab) {
+                    case 'share':
+                        str = '交易信息';
+                        break;
+                    case 'ask':
+                        str = '科技成果';
+                        break;
+                    case 'job':
+                        str = '需求信息';
+                        break;
+                    case 'good':
+                        str = '团队信息';
+                        break;
+                    default:
+                        str = '全部';
+                        break;
+                }
+                return str+'  测试数据 ';
+
 
             }
 

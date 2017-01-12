@@ -10,7 +10,7 @@
             <router-link class="icon-zhaopin iconfont item" :to="{'name':'list',query:{tab:'job'}}">招聘</router-link>
             <router-link class="icon-xiaoxi iconfont item line" :to="{'name':'message'}">消息</router-link>
             <router-link class="icon-about iconfont item" :to="{'name':'about'}">关于</router-link>-->
-            <router-link class="icon-zhuye iconfont item" :to="{'name':'list',query:{tab:'all'}}">新闻信息</router-link>
+            <!--<router-link class="icon-zhuye iconfont item" :to="{'name':'list',query:{tab:'all'}}">新闻信息</router-link>-->
             <router-link class="icon-tuandui iconfont item" :to="{'name':'list',query:{tab:'good'}}">团队信息</router-link>
             <router-link class="icon-jiaoyi iconfont item" :to="{'name':'list',query:{tab:'share'}}">交易信息</router-link>
             <router-link class="icon-keji iconfont item" :to="{'name':'list',query:{tab:'ask'}}">科技成果</router-link>

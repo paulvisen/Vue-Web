@@ -36,12 +36,20 @@
                     this.$alert('请填写用户名和密码');
                     return false;
                 }
+                else
+                {
+                    if(this.username!=='test'&&this.password!=='1234')
+                    {
+                        this.$alert('用户名密码错误');
+                        return false;
+                    }
+                }
 
                 $.ajax({
                     type: 'POST',
                     url: 'https://cnodejs.org/api/v1/accesstoken',
                     data: {
-                        accesstoken: this.username
+                        accesstoken: '12668ed7-3efd-4509-98ce-c421497f32df'
                     },
                     dataType: 'json',
                     success: (res) => {

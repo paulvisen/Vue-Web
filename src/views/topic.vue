@@ -10,7 +10,8 @@
                 :class="{'show-menu':showMenu}"
                 v-if="topic.title">
 
-            <h2 class="topic-title" v-text="topic.title"></h2>
+            <!--<h2 class="topic-title" v-text="topic.title"></h2>-->
+            <h2 class="topic-title" > 测试数据-----主题 </h2>
             <section class="author-info">
                 <img class="avatar" :src="topic.author.avatar_url" />
                 <div class="col">
@@ -28,48 +29,56 @@
                 </div>
             </section>
 
-            <section class='markdown-body topic-content' v-html="topic.content">
+            <!--<section class='markdown-body topic-content' v-html="topic.content">-->
 
+            <section class='markdown-body topic-content' >
+                测试数据 ！！！！！
+                slkdfjsfkjsalkfdj
+
+                fsdlkfsljklfkjkslj
+
+                klksjdflkskjf
+                
             </section>
 
-            <h3 class="topic-reply">
-                <strong>{{topic.reply_count}}</strong> 回复
-            </h3>
+            <!--<h3 class="topic-reply">-->
+                <!--<strong>{{topic.reply_count}}</strong> 回复-->
+            <!--</h3>-->
 
-            <section class="reply-list">
-                <ul>
-                    <li v-for="item in topic.replies">
-                        <section class="user">
-                            <router-link :to="{name:'user',params:{loginname:item.author.loginname}}" >
-                                <img class="head" :src="item.author.avatar_url"/>
-                            </router-link>
-                            <div class="info">
-                                <span class="cl">
-                                    <span class="name" v-text="item.author.loginname"></span>
-                                    <span class="name mt10">
-                                        <span></span>
-                                        发布于:{{item.create_at | getLastTimeStr(true)}}</span>
-                                </span>
-                                <span class="cr">
-                                    <span class="iconfont icon"
-                                        :class="{'uped':isUps(item.ups)}"
-                                        @click="upReply(item)">&#xe608;</span>
-                                    {{item.ups.length}}
-                                    <span class="iconfont icon" @click="addReply(item.id)">&#xe609;</span>
-                                </span>
-                            </div>
-                        </section>
-                        <div class="reply_content" v-html="item.content"></div>
-                        <nv-reply :topic.sync="topic"
-                                :topic-id="topicId"
-                                :reply-id="item.id"
-                                :reply-to="item.author.loginname"
-                                :show.sync="curReplyId"
-                                @close="hideItemReply"
-                                v-if="userInfo.userId && curReplyId === item.id"></nv-reply>
-                    </li>
-                </ul>
-            </section>
+            <!--<section class="reply-list">-->
+                <!--<ul>-->
+                    <!--<li v-for="item in topic.replies">-->
+                        <!--<section class="user">-->
+                            <!--<router-link :to="{name:'user',params:{loginname:item.author.loginname}}" >-->
+                                <!--<img class="head" :src="item.author.avatar_url"/>-->
+                            <!--</router-link>-->
+                            <!--<div class="info">-->
+                                <!--<span class="cl">-->
+                                    <!--<span class="name" v-text="item.author.loginname"></span>-->
+                                    <!--<span class="name mt10">-->
+                                        <!--<span></span>-->
+                                        <!--发布于:{{item.create_at | getLastTimeStr(true)}}</span>-->
+                                <!--</span>-->
+                                <!--<span class="cr">-->
+                                    <!--<span class="iconfont icon"-->
+                                        <!--:class="{'uped':isUps(item.ups)}"-->
+                                        <!--@click="upReply(item)">&#xe608;</span>-->
+                                    <!--{{item.ups.length}}-->
+                                    <!--<span class="iconfont icon" @click="addReply(item.id)">&#xe609;</span>-->
+                                <!--</span>-->
+                            <!--</div>-->
+                        <!--</section>-->
+                        <!--<div class="reply_content" v-html="item.content"></div>-->
+                        <!--<nv-reply :topic.sync="topic"-->
+                                <!--:topic-id="topicId"-->
+                                <!--:reply-id="item.id"-->
+                                <!--:reply-to="item.author.loginname"-->
+                                <!--:show.sync="curReplyId"-->
+                                <!--@close="hideItemReply"-->
+                                <!--v-if="userInfo.userId && curReplyId === item.id"></nv-reply>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</section>-->
             <nv-top></nv-top>
             <nv-reply v-if="userInfo.userId"
                     :topic="topic"

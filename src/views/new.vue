@@ -1,25 +1,25 @@
 <template>
     <div>
-        <nv-head page-type="主题"
+        <nv-head page-type="留言信息"
             :show-menu="false"
             :fix-head="true"></nv-head>
         <div class="add-container">
             <div class="line">选择分类：
                 <select class="add-tab" v-model="topic.tab">
-                    <option value="share">分享</option>
-                    <option value="ask">问答</option>
-                    <option value="job">招聘</option>
+                    <option value="asker">咨询</option>
+                    <option value="reporter">举报</option>
+                    <option value="returner">反馈</option>
                 </select>
                 <a class="add-btn" @click="addTopic">发布</a>
             </div>
             <div class="line">
                 <input class="add-title" v-model="topic.title"
                         type="text" :class="{'err':err=='title'}"
-                        placeholder="标题，字数10字以上" max-length="100"/>
+                        placeholder="标题，字数10字以上，不超过100字" max-length="100"/>
             </div>
             <textarea v-model="topic.content" rows="35" class="add-content"
                 :class="{'err':err=='content'}"
-                placeholder='回复支持Markdown语法,请注意标记代码'>
+                placeholder='正文，字数不限'>
             </textarea>
         </div>
     </div>

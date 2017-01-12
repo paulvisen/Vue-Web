@@ -25,7 +25,7 @@ exports.getTabStr = (tab, good, top) => {
         str = '精华';
     } else {
         switch (tab) {
-            case '交易':
+            case 'jiaoyi':
                 str = '交易信息';
                 break;
             case 'keji':
